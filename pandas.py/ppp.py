@@ -1,0 +1,40 @@
+import pandas as pd
+s=pd.Series([10,20,30,40,50])
+print(s)
+print(s.index)
+s.name="numbers"
+print(s.name)
+print(s[1:4])
+print(s.iloc[3])
+print(s.iloc[[0,2,4]])
+index=["a","b","c","d","e"]
+s.index=index
+print(s)
+print(s["a"])
+print(s.loc["b":"d"])
+print(s.loc[["a","c","e"]])
+fruit_protein={
+    "apple":0.3,
+    "banana":0.6,
+    "cherry":1.0,
+    "date":1.5,
+    "orange":1.2,
+    "blackberry":2.0,
+    "kiwi":2.1
+}
+f=pd.Series(fruit_protein,name="protein")
+print(f)
+print(f.index)
+print(f["banana":"kiwi"])
+print(f.loc[["banana","blackberry","date"]])
+print(f<1.0)
+print(f[f<1.0])
+print([(f>1.0)&(f<2.0)])
+print(f[(f>1.0)&(f<2.0)])
+print(f[(f>1.5)|(f<2.0)])
+print([(f>1.5)|(f<2.0)])
+print([~(f>1.5)])
+print(f[~(f>1.5)])
+f["apple"]=1.2
+print(f)
+
